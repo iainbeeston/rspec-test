@@ -16,6 +16,10 @@ RSpec.describe 'inclusion matcher' do
 end
 
 RSpec.describe 'Range.include?' do
+  it 'can handle inclusion on infinite ranges' do
+    expect((1..).include?(3)).to eq(true)
+  end
+  
   it 'can handle exclusion on infinite ranges' do
     expect((1..).include?(0)).to eq(false)
   end
